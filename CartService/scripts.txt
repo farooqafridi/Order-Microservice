@@ -1,0 +1,13 @@
+dotnet new webapi -n CartService --use-controllers
+dotnet sln add CartService/CartService.csproj
+
+dotnet add CartService package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add CartService package Microsoft.EntityFrameworkCore.Design
+
+Swashbuckle.AspNetCore
+
+
+dotnet ef migrations add InitialCart --project CartService --startup-project CartService
+dotnet ef database update --project CartService --startup-project CartService
+
+ef migrations remove

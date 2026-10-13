@@ -1,0 +1,4 @@
+[Environment]::GetEnvironmentVariables("User").GetEnumerator() |
+Where-Object { $_.Key -match '^(ConnectionStrings__|Services__|InventoryService__|CartService__|CatalogService__|ServiceBus__|Jwt__)' } |
+Sort-Object Key |
+Format-Table Key, Value -AutoSize

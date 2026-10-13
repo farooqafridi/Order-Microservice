@@ -1,0 +1,122 @@
+# =========================================================
+# .NET / ASP.NET Core
+# =========================================================
+
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/options
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# JetBrains
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# NuGet generated files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test results
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+*.coveragexml
+
+# Code coverage
+coverage/
+coverage*.xml
+*.opencover.xml
+
+# MSBuild generated files
+*.log
+*.binlog
+
+# ASP.NET Core
+wwwroot/lib/
+
+# Node / Angular
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Angular build output
+dist/
+.angular/
+
+# Environment / local configuration
+.env
+.env.*
+!.env.example
+
+# User-specific ASP.NET configuration
+appsettings.Local.json
+appsettings.Development.local.json
+
+# Secrets
+secrets.json
+secrets.*.json
+
+# Azure / local development
+.azure/
+.azure-devops/
+
+# Docker local overrides
+docker-compose.override.yml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# Generated documentation/build files
+*.generated.cs
+*.g.cs
+*.g.i.cs
+
+# Database local files
+*.mdf
+*.ldf
+*.ndf
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Local certificates
+*.pfx
+*.p12
+
+# Publish output
+publish/
+[ Pp]ublish/

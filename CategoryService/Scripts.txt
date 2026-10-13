@@ -1,0 +1,17 @@
+dotnet new webapi -n CategoryService --use-controllers
+dotnet sln add CategoryService/CategoryService.csproj
+
+dotnet add CategoryService package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add CategoryService package Microsoft.EntityFrameworkCore.Design
+
+Swashbuckle.AspNetCore
+
+
+dotnet ef migrations add InitialCategory --project CategoryService --startup-project CategoryService
+or
+dotnet ef migrations add InitialCategory
+
+
+dotnet ef migrations add InitialCategory --project CategoryService --startup-project CategoryService
+or
+dotnet ef database update 

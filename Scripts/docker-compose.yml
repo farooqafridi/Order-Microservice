@@ -1,0 +1,68 @@
+services:
+  userservice:
+    build:
+      context: .
+      dockerfile: UserService/Dockerfile
+    ports:
+      - "5001:8080"
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__UserDb: "Server=host.docker.internal;Database=UserDb;User Id=farooq;Password=Agnip@t1983;TrustServerCertificate=True"
+
+  categoryservice:
+    build:
+      context: .
+      dockerfile: CategoryService/Dockerfile
+    ports:
+      - "5002:8080"
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__CategoryDb: "Server=host.docker.internal;Database=CategoryDb;User Id=farooq;Password=Agnip@t1983;TrustServerCertificate=True"
+
+  catalogservice:
+    build:
+      context: .
+      dockerfile: CatalogService/Dockerfile
+    ports:
+      - "5003:8080"
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__CatalogDb: "Server=host.docker.internal;Database=CatalogDb;User Id=farooq;Password=Agnip@t1983;TrustServerCertificate=True"
+
+  cartservice:
+    build:
+      context: .
+      dockerfile: CartService/Dockerfile
+    ports:
+      - "5004:8080"
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__CartDb: "Server=host.docker.internal;Database=CartDb;User Id=farooq;Password=Agnip@t1983;TrustServerCertificate=True"
+
+  orderservice:
+    build:
+      context: .
+      dockerfile: OrderService/Dockerfile
+    ports:
+      - "5005:8080"
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__OrderDb: "Server=host.docker.internal;Database=OrderDb;User Id=farooq;Password=Agnip@t1983;TrustServerCertificate=True"
+
+  inventoryservice:
+    build:
+      context: .
+      dockerfile: InventoryService/Dockerfile
+    ports:
+      - "5006:8080"
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__InventoryDb: "Server=host.docker.internal;Database=InventoryDb;User Id=farooq;Password=Agnip@t1983;TrustServerCertificate=True"
+
+  paymentservice:
+    build:
+      context: .
+      dockerfile: PaymentService/Dockerfile
+    environment:
+      ConnectionStrings__PaymentDb: "Server=host.docker.internal;Database=PaymentDb;User Id=farooq;Password=Agnip@t1983;TrustServerCertificate=True"
+

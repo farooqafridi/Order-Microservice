@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="CartService/CartService.csproj" />
+  <Project Path="CatalogService/CatalogService.csproj" />
+  <Project Path="CategoryService/CategoryService.csproj" />
+  <Project Path="InventoryService/InventoryService.csproj" />
+  <Project Path="OrderService/OrderService.csproj" />
+  <Project Path="PaymentService/PaymentService.csproj" />
+  <Project Path="UserService/UserService.csproj" />
+</Solution>
