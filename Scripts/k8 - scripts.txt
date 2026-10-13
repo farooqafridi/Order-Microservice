@@ -30,6 +30,7 @@ kubectl create namespace orderflow
 
 kubectl create secret generic orderflow-config --namespace orderflow --from-env-file="D:\Concepts\Micro Services\OrderManagementSystem\OrderFlow.env"
 
+kubectl create secret generic orderflow-config --namespace orderflow --from-env-file="D:\Concepts\Micro Services\OrderManagementSystem\OrderFlow.env" --dry-run=client -o yaml | kubectl apply -f -
 
 kubectl apply --dry-run=client -f .\k8s\orderflow.yaml
 
