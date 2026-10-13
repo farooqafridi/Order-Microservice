@@ -1,0 +1,49 @@
+docker --version
+kubectl version --client
+minikube version
+
+
+minikube start --driver=docker
+
+minikube status
+kubectl get nodes
+
+docker images
+
+minikube image load userservice:latest
+minikube image load categoryservice:latest
+minikube image load catalogservice:latest
+minikube image load cartservice:latest
+minikube image load orderservice:latest
+minikube image load inventoryservice:latest
+minikube image load paymentservice:latest
+
+
+minikube image ls
+
+create a deployment service yaml file
+
+
+cd "D:\Concepts\Micro Services\OrderManagementSystem"
+
+kubectl create namespace orderflow
+
+kubectl create secret generic orderflow-config --namespace orderflow --from-env-file="D:\Concepts\Micro Services\OrderManagementSystem\OrderFlow.env"
+
+
+kubectl apply --dry-run=client -f .\k8s\orderflow.yaml
+
+kubectl apply -f .\k8s\orderflow.yaml
+
+kubectl get deployments -n orderflow
+
+kubectl get pods -n orderflow
+
+kubectl get services -n orderflow
+
+kubectl get pods -n orderflow -w
+
+
+Port-forwarding (recommended for your setup)
+
+docker rm -f userservice categoryservice catalogservice cartservice orderservice inventoryservice paymentservice
