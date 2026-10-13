@@ -47,3 +47,41 @@ kubectl get pods -n orderflow -w
 Port-forwarding (recommended for your setup)
 
 docker rm -f userservice categoryservice catalogservice cartservice orderservice inventoryservice paymentservice
+
+
+This removes those containers, not the images.
+Next, open six separate PowerShell terminals and run one command in each:
+UserService
+ Copy
+kubectl port-forward -n orderflow svc/userservice 7101:8080
+
+CategoryService
+ Copy
+kubectl port-forward -n orderflow svc/categoryservice 7102:8080
+
+CatalogService
+ Copy
+kubectl port-forward -n orderflow svc/catalogservice 7103:8080
+
+CartService
+ Copy
+kubectl port-forward -n orderflow svc/cartservice 7104:8080
+
+OrderService
+ Copy
+kubectl port-forward -n orderflow svc/orderservice 7105:8080
+
+InventoryService
+ Copy
+kubectl port-forward -n orderflow svc/inventoryservice 7106:8080
+
+Service	Postman base URL
+UserService	http://localhost:7101
+CategoryService	http://localhost:7102
+CatalogService	http://localhost:7103
+CartService	http://localhost:7104
+OrderService	http://localhost:7105
+InventoryService	http://localhost:7106
+
+
+kubectl get pods -n orderflow
