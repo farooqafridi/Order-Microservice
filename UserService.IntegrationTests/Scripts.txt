@@ -4,3 +4,11 @@ dotnet add UserService.IntegrationTests package Microsoft.AspNetCore.Mvc.Testing
 dotnet add UserService.IntegrationTests package Microsoft.EntityFrameworkCore.SqlServer
 
 dotnet test UserService.IntegrationTests
+dotnet test UserService.UnitTests
+dotnet test YourSolution.sln
+
+dotnet test UserService.IntegrationTests --logger "trx;LogFileName=integration-tests.trx" --results-directory ./TestResults
+
+add at bottom in program.cs in api project
+
+public partial class Program { }

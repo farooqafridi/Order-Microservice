@@ -2,6 +2,7 @@
   <Folder Name="/tests/">
     <Project Path="CartService.IntegrationTests/CartService.IntegrationTests.csproj" Id="5529adad-192b-47e2-832d-88a536b17740" />
     <Project Path="UserService.IntegrationTests/UserService.IntegrationTests.csproj" Id="40993af9-2db0-4371-aec7-4b58cc11ec1c" />
+    <Project Path="UserService.UnitTests/UserService.UnitTests.csproj" Id="7adaf129-4b4c-4fbb-94f2-0ca6b2935ee9" />
   </Folder>
   <Project Path="CartService/CartService.csproj" />
   <Project Path="CatalogService/CatalogService.csproj" />
