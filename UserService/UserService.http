@@ -1,6 +1,23 @@
-@UserService_HostAddress = http://localhost:5156
 
-GET {{UserService_HostAddress}}/weatherforecast/
-Accept: application/json
+@baseUrl = http://localhost:44385
+@email = farooqafridi@gmail.cm
+@password = Agnip@t1983
 
-###
+# ### 1. Register a new customer
+# POST {{baseUrl}}/api/auth/register
+# Content-Type: application/json
+
+# {
+#   "email": "{{email}}",
+#   "password": "{{password}}",
+#   "displayName": "Farooq Test"
+# }
+
+### 2. Login with the registered customer
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}

@@ -22,7 +22,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connectionString =
-    builder.Configuration.GetConnectionString("UserDb")
+    //builder.Configuration.GetConnectionString("UserDb")
+    "Data Source=DESKTOP-AE7G9LP;Initial Catalog=UserDb;Integrated Security=True;TrustServerCertificate=True;"
     ?? throw new InvalidOperationException(
         "Connection string 'UserDb' is missing.");
 

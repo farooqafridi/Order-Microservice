@@ -6,7 +6,10 @@ dotnet add UserService.IntegrationTests package Microsoft.EntityFrameworkCore.Sq
 dotnet test UserService.IntegrationTests
 dotnet test UserService.UnitTests
 dotnet test YourSolution.sln
+dotnet test --collect:"XPlat Code Coverage"
 
+
+dotnet test --collect:"XPlat Code Coverage" --logger "trx;LogFileName=tests.trx" --results-directory ./TestResults
 dotnet test UserService.IntegrationTests --logger "trx;LogFileName=integration-tests.trx" --results-directory ./TestResults
 
 add at bottom in program.cs in api project
