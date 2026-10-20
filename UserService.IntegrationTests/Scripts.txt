@@ -1,0 +1,6 @@
+dotnet new xunit -n UserService.IntegrationTests
+dotnet add UserService.IntegrationTests reference UserService/UserService.csproj
+dotnet add UserService.IntegrationTests package Microsoft.AspNetCore.Mvc.Testing
+dotnet add UserService.IntegrationTests package Microsoft.EntityFrameworkCore.SqlServer
+
+dotnet test UserService.IntegrationTests

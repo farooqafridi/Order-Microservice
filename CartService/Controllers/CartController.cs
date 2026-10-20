@@ -1,10 +1,11 @@
 using CartService.Data;
 using CartService.Models;
 using CartService.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Polly.CircuitBreaker;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
 
 namespace CartService.Controllers;
 
@@ -54,6 +55,8 @@ public sealed class CartController : ControllerBase
     }
 
     // POST: api/cart/{customerId}/items
+    [RequestSizeLimit(1_000_000)]
+
     [HttpPost("{customerId:guid}/items")]
     public async Task<IActionResult> AddItem(
         AddCartItemRequest request,
@@ -88,6 +91,15 @@ public sealed class CartController : ControllerBase
             {
                 message = "CatalogService request timed out."
             });
+        }
+        catch (BrokenCircuitException)
+        {
+            return StatusCode(
+                StatusCodes.Status503ServiceUnavailable,
+                new
+                {
+                    error = "CatalogService is temporarily unavailable."
+                });
         }
 
         if (product is null)

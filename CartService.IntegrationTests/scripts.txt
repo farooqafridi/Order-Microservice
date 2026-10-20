@@ -1,0 +1,9 @@
+dotnet new xunit -n CompanyApi.IntegrationTests
+dotnet sln add CompanyApi.IntegrationTests/CompanyApi.IntegrationTests.csproj
+dotnet add CompanyApi.IntegrationTests/CompanyApi.IntegrationTests.csproj reference CompanyApi/CompanyApi.csproj
+dotnet add CompanyApi.IntegrationTests package Microsoft.AspNetCore.Mvc.Testing
+dotnet add CompanyApi.IntegrationTests package Microsoft.EntityFrameworkCore.SqlServer
+
+
+
+dotnet test UserService.IntegrationTests

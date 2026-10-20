@@ -11,3 +11,7 @@ dotnet ef migrations add InitialCart --project CartService --startup-project Car
 dotnet ef database update --project CartService --startup-project CartService
 
 ef migrations remove
+
+
+dotnet ef migrations add AddOrderSaga
+dotnet ef database update
